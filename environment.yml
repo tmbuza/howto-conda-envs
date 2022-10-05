@@ -1,0 +1,10 @@
+name: eda
+channels:
+  - biobakery
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - jupyterlab
+prefix: /Users/tmbuza/opt/anaconda3/envs/eda

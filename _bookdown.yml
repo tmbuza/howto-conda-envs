@@ -1,0 +1,13 @@
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+
+book_filename: "web-apps"
+output_dir:
+rmd_files: [
+"index.Rmd",
+"README.Rmd",
+
+"999-references.Rmd"
+]
