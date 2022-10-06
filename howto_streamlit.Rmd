@@ -1,0 +1,272 @@
+# Python in Streamlit Web App
+
+```python
+import streamlit as st
+import matplotlib
+from matplotlib import pyplot as plt
+from matplotlib.pyplot import figure
+import seaborn as sns
+from PIL import Image
+
+with st.echo(code_location='below'):
+    st.title("Getting Started with Streamlit")
+    """### :warning: See a [full code](https://github.com/tmbuza/howto-streamlit/blob/main/howto_strm.py). Also appended at the end of this doc."""
+
+
+    """
+    - st.title("Basic Knowledge in Streamlit")
+    - st.header("This is header")
+    - st.subheader("This is subheader")
+    - st.text("This is nomal text")
+    """
+
+
+    st.title("Basic Knowledge in Streamlit")
+    st.header("This is header")
+    st.subheader("This is subheader")
+    st.text("This is nomal text")
+
+    """
+    # Markdown
+    - st.markdown("# Markdowm level 1")
+    - st.markdown("## Markdowm level 2")
+    - st.markdown("### Markdowm level 3")
+    - st.markdown("#### Markdowm level 4")
+    """
+    st.markdown("# Markdowm level 1")
+    st.markdown("## Markdowm level 2")
+    st.markdown("### Markdowm level 3")
+    st.markdown("#### Markdowm level 4")
+
+    """
+    # Colors
+    - st.success("Susccessful")
+    - st.info("Information")
+    - st.warning("Warning")
+    - st.error("Error")
+    - st.exception("NameError")
+    """
+    st.success("Susccessful")
+    st.info("Information")
+    st.warning("Warning")
+    st.error("Error")
+    st.exception("NameError(Name errors not defined)")
+
+    """
+    ## Text
+    """
+    st.write("Here is text with write function")
+
+    """
+    ## Write function
+    """
+
+    st.write(range(20))
+
+
+    """
+    ## Image
+    """
+    fig1 = Image.open("img/fig1.png")
+    st.image(fig1,  width=400, caption = "Simple Image")
+
+
+    """
+    ## Video MP4
+    """
+    vid1 = open("mp3mp4/climate_spiral_nasa.mp4", "rb").read()
+    st.video(vid1)
+
+
+    """
+    ## Video URL
+    """
+    st.video('https://www.youtube.com/watch?v=VzPD009qTN4')
+
+
+    """
+    # Audio MP3
+    - Example: https://www.youtube.com/watch?v=VzPD009qTN4
+    """
+    audio1 = open("mp3mp4/audio_microbiome.mp3", "rb").read()
+    st.audio(audio1, format='audio/mp3')
+
+    """
+    # Widget: Checkbox
+    """
+    if st.checkbox("Show/Hide"):
+      st.text("Showing or Hiding Widget")
+
+
+    """
+    # Widget: Radio
+    """
+    status = st.radio("What is your status", ("Active", "Inactive"))
+
+    if status =='Active':
+      st.success("You are doing great for your health")
+    else:
+      st.warning("Being inactive state can cause harm to your health")
+
+    """
+    ## Select box
+    """
+    expertise = st.selectbox("Your expertise", ["Bioinformatics", "Data Science", "R-Programming", "Python-Programming", "Multi-Omics Analysis", "Business"])
+    st.write("Your area of expertise is",  expertise)
+
+    """
+    ## MultiSelect box
+    """
+    interest = st.multiselect("Your interest", ["Bioinformatics", "Data Science", "R-Programming", "Python-Programming", "Machine Learning", "Multi-Omics Analysis", "Business"])
+    st.write("You selected", len(interest), "interests")
+
+    """
+    ## Slider
+    """
+    rating = st.slider("What if the performance rating", 1, 10)
+
+
+    """
+    ## Simple Button
+    """
+    st.button("Simple Button")
+
+    if st.button("About"):
+      st.text("Data Science is very challenging and rewarding!")
+
+    if st.button("Resources"):
+      st.text("End-to-End Bioinformatics and Data Science Solujtions!")
+
+
+    if st.button("ContactUs"):
+      st.text("Get in-touch to learni more!")
+
+
+    # """
+    # ## Text Input
+    # """
+    # firstname = st.text_input("Enter Your First Name","Type Here")
+    # if st.button("Submit"):
+    #   result = firstname.title()
+    #   st.success(result)
+
+
+    """
+    ## Text Area
+    """
+    message = st.text_input("Enter Your message","Type Here")
+    if st.button("Submit"):
+      result = message.title()
+      st.success(result)
+
+
+    """
+    ## Date Input
+    """
+    import datetime
+    today = st.date_input("Today is ", datetime.datetime.now())
+
+    """
+    ## Time Input
+    """
+    time = st.time_input("The time is ", datetime.time())
+
+
+    """
+    ## JSON
+    """
+    st.text("Display JSON")
+    st.json({'name':"TMB",'gender':"Female"})
+
+
+    """
+    ## Display raw code 1
+    """
+    st.text("Display Raw Code")
+    st.code("import numpy as np")
+
+
+    """
+    ## Display raw code 2
+    """
+    with st.echo():
+      import pandas as pd
+      df = pd.DataFrame()
+
+    """
+    ## Progress Bar
+    """
+    import time
+    my_bar = st.progress(0)
+    for p in range(10):
+      my_bar.progress(p + 1)
+
+
+    """
+    ## Spinner
+    """
+    with st.spinner("Waiting .."):
+      time.sleep(5)
+      st.success("Finished!")
+
+    """
+    ## Sidebars
+    """
+
+    st.echo(("Sidebars"))
+    st.sidebar.header("About")
+    st.sidebar.text("This is all you need \nto know about getting \nstarted with Streamlit")
+
+
+    """
+    ## Functions
+    """
+    @st.cache
+    def run_fxn():
+      return range(100)
+
+    st.write(run_fxn())
+
+
+    """
+    ## Getting Data
+    """
+
+
+    import seaborn as sns
+    sns.set_style("whitegrid")
+
+    df = sns.load_dataset('iris')
+
+
+    """
+    ## DataFrames Structure
+    """
+    st.dataframe(df.head())
+
+    """
+    ## Tables
+    """
+    st.table(df.head())
+
+
+    """
+    ## Scatter with Seaborn
+    """
+    fig = sns.FacetGrid(df, hue ="species",
+                  height = 6).map(plt.scatter,
+                                  'sepal_length',
+                                  'petal_length').add_legend()
+
+    # fig, ax = plt.subplots()
+    # ax.scatter(df.loc[0:10, ['Sepal_Length', 'Petal_Length']])
+    st.pyplot(fig)
+
+    """
+    ## Full code
+    Below is the full code \n
+    If you have any questions, checkout streamlit [documentation](https://docs.streamlit.io) and [community
+    forums](https://discuss.streamlit.io).
+    """
+```
+

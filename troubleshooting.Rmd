@@ -1,0 +1,20 @@
+# Troubleshooting
+
+## Conda: CommandNotFoundError {#CommandNotFoundError}
+- CommandNotFoundError: Your shell has not been properly configured to use ‘conda activate’
+- **Solution**: Run the following sequentially
+```
+source activate
+conda deactivate
+conda activate desired-env-name
+```
+
+## Streeamlit: ModuleNotFoundError: No module named `module-name` {#ModuleNotFoundError}
+- ModuleNotFoundError: No module named `module-name`
+- **Solution**: List the required module in one of these Python dependency files in the app directory.
+```
+requirements.txt NOT requirement.txt
+environment.yml
+Pipfile
+pyproject.toml
+```

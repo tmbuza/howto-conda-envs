@@ -1,0 +1,3 @@
+# (PART) MANAGING ENVIRONMENTS {-}
+# Virtual Environments
+Virtual environments are meant to separate the dependencies of different projects, making it easy to manage, share with teammates, and ensure smooth reproducibility. 

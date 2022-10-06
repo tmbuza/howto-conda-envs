@@ -1,6 +1,6 @@
 ---
-title: "Creating and Managing Conda Environments"
-subtitle: "Practical user guides with integrated solutions."
+title: "Software Implementation Knowledgebase "
+subtitle: "Practical user guides with integrated solutions"
 author: "Teresia Mrema-Buza, A Bioinformatics Scientist and Data Science Enthusiast."
 date: "Updated on `r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -38,10 +38,6 @@ description: |
 <!-- <a href=""><img src="img/placeholder.png" alt="Book cover" width="100%" style="padding: 50px 0px 50px 0px; float: right;"/></a> -->
 <a href=""><img src="img/cover.png" alt="Book cover" width="100%" style="padding: 50px 0px 50px 0px; float: right;"/></a>
 
-## Conda virtual environment
-Conda environment contains packages installed by a user. The virtual environment helps isolate tools and dependencies for individual projects, making it easy to manage, share with teammates, and ensure smooth reproducibility. 
-
-To create a conda environment, you must have already installed '[Anaconda](https://www.anaconda.com/products/distribution)' (all-in-one) or '[Miniconda](https://docs.conda.io/en/latest/miniconda.html)' (save space, get what you need.
-
 ## Structure of this guide
 This guide is divided into chapters to facilitate easy navigation. Each chapter contains several sections, as displayed in the navigation bars on the left and right. Click the hyperlinked text to jump into a specific chapter or section.
+
